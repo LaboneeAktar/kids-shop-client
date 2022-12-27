@@ -1,12 +1,12 @@
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCSmBPf-3C0pZsWsV1IRboVJmLsd0S8JRM",
-  authDomain: "kids-shop-86311.firebaseapp.com",
-  projectId: "kids-shop-86311",
-  storageBucket: "kids-shop-86311.appspot.com",
-  messagingSenderId: "1074538768241",
-  appId: "1:1074538768241:web:4f427cde80a99fdcc4f8d0",
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId,
 };
 
 // Initialize Firebase
