@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 const Category = ({ category }) => {
   const { title, img } = category;
   return (
-    <section className="w-full my-6" id="menu">
+    <section className="w-full my-6" id="product">
       <motion.div
-        className="w-full flex flex-col items-center justify-center bg-white p-5 h-40 rounded-md drop-shadow-xl"
+        className="w-full flex flex-col gap-3 items-center justify-center bg-white hover:border hover:border-rose-700 py-5 px-2 h-40 rounded-md drop-shadow-2xl cursor-pointer"
         whileTap={{ scale: 0.75 }}
       >
-        <img src={img} className="w-16" alt="" />
+        <img src={img} className="w-20" alt="" />
         <p className="pt-2 font-semibold text-center">{title}</p>
       </motion.div>
     </section>
