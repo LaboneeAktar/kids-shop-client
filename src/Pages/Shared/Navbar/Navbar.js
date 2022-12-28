@@ -59,7 +59,7 @@ const Navbar = () => {
             </li>
 
             <li className="font-semibold hover:text-rose-800 cursor-pointer">
-              Contact
+              Products
             </li>
           </ul>
           <div className="relative flex justify-center items-center">
@@ -165,9 +165,9 @@ const Navbar = () => {
                         Home
                       </p>
                     </Link>
-                    <Link to="/contact">
+                    <Link to="#products">
                       <p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-200 transition-all duration-100 ease-in-out">
-                        Contact
+                        Products
                       </p>
                     </Link>
                     {user && user.email === "labonipub@gmail.com" && (
