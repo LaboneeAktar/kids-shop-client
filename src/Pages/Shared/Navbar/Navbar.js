@@ -45,7 +45,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="fixed z-50 w-screen p-3 px-4 lg:p-2 lg:px-16">
+      <div className="fixed z-50 w-screen p-3 px-4 lg:p-2 lg:px-16 bg-white">
         <div className="hidden md:flex">
           <Link to="/">
             <div className="flex items-center gap-2">

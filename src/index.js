@@ -7,15 +7,20 @@ import { StateProvider } from "./contexts/StateProvider";
 import reducer from "./contexts/reducer";
 import { initialState } from "./contexts/initialState";
 import AuthProvider from "./contexts/AuthProvider";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <AuthProvider>
-      <StateProvider initialState={initialState} reducer={reducer}>
-        <App />
-      </StateProvider>
-    </AuthProvider>
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <StateProvider initialState={initialState} reducer={reducer}>
+          <App />
+        </StateProvider>
+      </AuthProvider>
+    </QueryClientProvider>
   </React.StrictMode>
 );
 

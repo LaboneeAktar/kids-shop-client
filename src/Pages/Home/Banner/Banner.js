@@ -6,13 +6,13 @@ import BImage4 from "../../../assets/images/img4.jpg";
 
 const Banner = () => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-10">
       <div className="py-20">
         <p className="bg-slate-200 w-32 px-2 py-1 rounded-md shadow-lg mx-auto lg:ml-0">
           In Short Time
         </p>
 
-        <h1 className="lg:text-5xl text-3xl tracking-wider py-4 text-center lg:text-left">
+        <h1 className="lg:text-4xl text-3xl tracking-wider py-4 text-center lg:text-left">
           {" "}
           The Fastest and Easiest {""} <br />
           <span className="text-rose-700 font-bold">Online Shopping</span>{" "}
