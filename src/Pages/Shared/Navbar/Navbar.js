@@ -11,10 +11,14 @@ import { motion } from "framer-motion";
 import { AuthContext } from "../../../contexts/AuthProvider";
 import { GoogleAuthProvider } from "firebase/auth";
 import { toast } from "react-hot-toast";
+import { useStateValue } from "../../../contexts/StateProvider";
+import { actionType } from "../../../contexts/reducer";
 
 const Navbar = () => {
   const { user, googleSignIn, logOut } = useContext(AuthContext);
   const [isMenu, setIsMenu] = useState(false);
+
+  const [{ cartShow }, dispatch] = useStateValue();
 
   const googleProvider = new GoogleAuthProvider();
 
@@ -34,6 +38,13 @@ const Navbar = () => {
     } else {
       setIsMenu(!isMenu);
     }
+  };
+
+  const showCart = () => {
+    dispatch({
+      type: actionType.SET_CART_SHOW,
+      cartShow: !cartShow,
+    });
   };
 
   const handleLogOut = () => {
@@ -62,7 +73,10 @@ const Navbar = () => {
               Products
             </li>
           </ul>
-          <div className="relative flex justify-center items-center">
+          <div
+            className="relative flex justify-center items-center"
+            onClick={showCart}
+          >
             <MdOutlineShoppingCart className="text-2xl ml-8 cursor-pointer" />
             <div className="w-4 h-4 rounded-full bg-rose-700 flex justify-center items-center absolute -top-[-10px] -right-1">
               <p className="text-xs text-white">1</p>
@@ -128,7 +142,10 @@ const Navbar = () => {
         {/* Mobile View */}
         <div className="flex items-center justify-between md:hidden w-full h-full ">
           <div className="flex">
-            <div className="relative flex justify-center items-center">
+            <div
+              className="relative flex justify-center items-center"
+              onClick={showCart}
+            >
               <MdOutlineShoppingCart className="text-2xl cursor-pointer" />
               <div className="w-4 h-4 rounded-full bg-rose-700 flex justify-center items-center absolute -top-[10px] -right-1">
                 <p className="text-xs text-white">1</p>

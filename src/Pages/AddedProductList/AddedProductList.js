@@ -29,7 +29,7 @@ const AddedProductList = () => {
 
   //delete product data
   const handleDelete = (product) => {
-    fetch(`${process.env.REACT_APP_API_URL}/books/mybooks/${product._id}`, {
+    fetch(`${process.env.REACT_APP_API_URL}/products/${product._id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

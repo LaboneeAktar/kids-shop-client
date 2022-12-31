@@ -1,7 +1,3 @@
-// import { fetchUser } from "../utilities/fetchLSData";
-
-// const userInfo = fetchUser();
-
-// export const initialState = {
-//   user: userInfo,
-// };
+export const initialState = {
+  cartShow: false,
+};
