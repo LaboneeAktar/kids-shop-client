@@ -18,7 +18,7 @@ const Navbar = () => {
   const { user, googleSignIn, logOut } = useContext(AuthContext);
   const [isMenu, setIsMenu] = useState(false);
 
-  const [{ cartShow }, dispatch] = useStateValue();
+  const [{ cartShow, cartItems }, dispatch] = useStateValue();
 
   const googleProvider = new GoogleAuthProvider();
 
@@ -78,9 +78,11 @@ const Navbar = () => {
             onClick={showCart}
           >
             <MdOutlineShoppingCart className="text-2xl ml-8 cursor-pointer" />
-            <div className="w-4 h-4 rounded-full bg-rose-700 flex justify-center items-center absolute -top-[-10px] -right-1">
-              <p className="text-xs text-white">1</p>
-            </div>
+            {cartItems && cartItems.length > 0 && (
+              <div className="w-4 h-4 rounded-full bg-rose-700 flex justify-center items-center absolute -top-[-10px] -right-1">
+                <p className="text-xs text-white">{cartItems.length}</p>
+              </div>
+            )}
           </div>
           <div className="relative flex justify-center items-center">
             <MdFavoriteBorder className="text-2xl ml-4 cursor-pointer" />
@@ -147,9 +149,11 @@ const Navbar = () => {
               onClick={showCart}
             >
               <MdOutlineShoppingCart className="text-2xl cursor-pointer" />
-              <div className="w-4 h-4 rounded-full bg-rose-700 flex justify-center items-center absolute -top-[10px] -right-1">
-                <p className="text-xs text-white">1</p>
-              </div>
+              {cartItems && cartItems.length > 0 && (
+                <div className="w-4 h-4 rounded-full bg-rose-700 flex justify-center items-center absolute -top-[-10px] -right-1">
+                  <p className="text-xs text-white">{cartItems.length}</p>
+                </div>
+              )}
             </div>
             <MdFavoriteBorder className="text-2xl ml-2 cursor-pointer" />
           </div>
