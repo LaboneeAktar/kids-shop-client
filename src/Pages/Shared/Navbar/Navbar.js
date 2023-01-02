@@ -65,13 +65,16 @@ const Navbar = () => {
             </div>
           </Link>
           <ul className="flex items-center gap-8 ml-auto">
-            <li className="font-semibold hover:text-rose-800 cursor-pointer">
-              Home
-            </li>
-
-            <li className="font-semibold hover:text-rose-800 cursor-pointer">
-              Products
-            </li>
+            <Link to="/">
+              <li className="font-semibold hover:text-rose-800 cursor-pointer">
+                Home
+              </li>
+            </Link>
+            <a href="#products">
+              <li className="font-semibold hover:text-rose-800 cursor-pointer">
+                Products
+              </li>
+            </a>
           </ul>
           <div
             className="relative flex justify-center items-center"
